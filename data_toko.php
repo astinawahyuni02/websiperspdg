@@ -90,7 +90,7 @@
                     <td><?php echo $data['keterangan']?></td>
                     <td><?php echo $data['longitude']?></td>
                     <td><?php echo $data['latitude']?></td>
-                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='300' height='100';"?> </td>
+                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='200' height='100';"?> </td>
                     <td align="center">
 					<a href="hapus_toko.php?id=<?php echo $data['id_toko']?>"class="btn btn-danger">Hapus</a></td>
                   </tr>
