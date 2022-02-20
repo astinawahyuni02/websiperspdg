@@ -79,7 +79,7 @@
               <tbody>
                 <?php
                   include 'koneksi.php';
-                  $q=mysqli_query($koneksi,"SELECT * FROM tb_toko");
+                  $q=mysqli_query($koneksi,"SELECT * FROM `database-siperspdg`.tb_toko");
                   $no=1;
                   while ($data=mysqli_fetch_array($q)) {
                   ?>
