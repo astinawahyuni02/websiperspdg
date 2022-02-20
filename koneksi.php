@@ -1,7 +1,7 @@
 <?php
  
 //Variabel database
-    $servername = "54.208.203.255";
+    $servername = "database-siperspdg.crb4qur1hich.us-east-1.rds.amazonaws.com";
     $username = "admin";
     $password = "12345678";
     $dbname = "database-siperspdg";
