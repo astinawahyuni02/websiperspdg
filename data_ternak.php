@@ -67,7 +67,7 @@
             <table class="table table-striped table-bordered" align="center">
               <thead>
                 <tr>
-                <th>No</th>
+                  <th>No</th>
                   <th>Nama Peternakan</th>
                   <th>Jenis Kelamin</th>
                   <th>Umur</th>
