@@ -54,52 +54,63 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Data Profile</li>
+				<li class="active">Data Info</li>
 			</ol>
 		</div><!--/.row-->
 
 	<div class="container-fluid" style="margin-top: 10px">
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Tabel Data Profile</div> 
+          <i class="fa fa-table"></i> Update Tabel Data Info</div> 
         <div class="card-body">
-          <div class="table-responsive" style="margin-top: 10px">
-            <table class="table table-striped table-bordered" align="center">
-              <thead>
-                <tr>
-                <th>No</th>
-                  <th>Email </th>
-                  <th>Fullname</th>
-				  <th>Is Active</th>
-                  <!-- <th>Password</th> -->
-                  <th>Tanggal</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                  include 'koneksi.php';
-                  $ambil=mysqli_query($koneksi,"SELECT * FROM tb_user");
-                  $no=1;
-                  while ($data=mysqli_fetch_array($ambil)) {
-                  ?>
-                  <tr>
-                    <td><?php echo $no;?></td>
-                    <td><?php echo $data['email']?></td>
-                    <td><?php echo $data['fullname']?></td>
-					<td><?php echo $data['is_active']?></td>
-                    <td><?php echo $data['tanggal']?></td>
-					<td align="center">
-					<a href="edit_profile.php?id=<?php echo $data['id_user']?>"class="btn btn-danger">Edit</a></td>
-                    <td align="center">
-					<a href="hapus_profile.php?id=<?php echo $data['id_user']?>"class="btn btn-danger">Hapus</a></td>
-                  </tr>
-                  <?php
-                  $no++;
-                  }
-                  ?>
-	              </tbody>
-	            </table>
-	          </div>
+
+	<?php
+	include 'koneksi.php';
+	$ambil=mysqli_query($koneksi,"SELECT * FROM tb_info WHERE id_info='$_GET[id]'");
+	$data=mysqli_fetch_array($ambil);
+	?>
+	<form action="" method="post" >
+		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Judul Info</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="JudulInfo" value="<?= $data['judul_info']?>" required="">
+    		</div>
+  		</div>
+		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Deskripsi</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Deskripsi" value="<?= $data['deskripsi']?>" required="">
+    		</div>		
+		</div>	
+        <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Tanggal</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Tanggal" value="<?= $data['tanggal']?>" required="">
+    		</div>		
+		</div>
+
+			<div class="form-group row">
+    		<label class="col-sm-2 col-form-label"></label>
+    		<div class="col-sm-8">
+      			<input type="submit" name="update" value="update" class="btn btn-primary">
+    		</div>
+		</div>
+	</form>
+
+	<?php
+	if(isset($_POST['update']))
+	{
+		$ambil=mysqli_query($koneksi,"UPDATE tb_info SET
+		judul_info		='$_POST[JudulInfo]',
+		deskripsi 	    ='$_POST[Deskripsi]',
+		tanggal  	    ='$_POST[Tanggal]' WHERE id_info='$_GET[id]'"
+		);
+		if($ambil)
+		{
+			header('location:/info.php');//redirect
+		}
+	}
+	?>
 	        </div>
 	      </div>
 	    </div>

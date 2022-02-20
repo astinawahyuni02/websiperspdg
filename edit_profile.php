@@ -83,6 +83,12 @@
     		</div>		
 		</div>	
 		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Tanggal</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Tanggal" value="<?= $data['tanggal']?>" required="">
+    		</div>		
+		</div>
+		<div class="form-group row">
     		<label for="inputEmail3" class="col-sm-2 col-form-label">Is Active</label>
     		<div class="col-sm-8">
       			<input type="text" class="form-control" name="IsActive" value="<?= $data['is_active']?>" required="">
@@ -103,10 +109,10 @@
 		$ambil=mysqli_query($koneksi,"UPDATE tb_user SET
 		email		='$_POST[Email]',
 		fullname 	='$_POST[Fullname]',
-		tanggal  	='$_POST[tanggal]',
+		tanggal  	='$_POST[Tanggal]',
 		is_active	='$_POST[IsActive]' WHERE id_user='$_GET[id]'"
 		);
-		if($q)
+		if($ambil)
 		{
 			header('location:/profile.php');//redirect
 		}
