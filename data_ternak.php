@@ -91,7 +91,7 @@
               <tbody>
                 <?php
                   include 'koneksi.php';
-                  $q=mysqli_query($koneksi,"SELECT * FROM Peternakan_get");
+                  $q=mysqli_query($koneksi,"SELECT * FROM `database-siperspdg`.tb_peternakan");
                   $no=1;
                   while ($data=mysqli_fetch_array($q)) {
                   ?>
@@ -114,7 +114,7 @@
                     <td><?php echo $data['permasalahan']?></td>
                     <td><?php echo $data['longitude']?></td>
                     <td><?php echo $data['latitude']?></td>
-                    <td><?php echo "<img src='/../websiperspdg/gbr_ternak/".$data['gambar']."' width='50' height='50';"?> </td>
+                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='50' height='50';"?> </td>
                     <td align="center">
 					<a href="hapus_ternak.php?id=<?php echo $data['id_peternakan']?>"class="btn btn-danger">Hapus</a></td>
                   </tr>
