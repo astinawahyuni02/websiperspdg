@@ -116,7 +116,7 @@
                     <td><?php echo $data['longitude']?></td>
                     <td><?php echo $data['latitude']?></td>
 					<td><?php echo $data['tanggal']?></td>
-                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='100' height='100';"?> </td>
+                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='200' height='100';"?> </td>
                     <td align="center">
 					<a href="hapus_ternak.php?id=<?php echo $data['id_peternakan']?>"class="btn btn-danger">Hapus</a></td>
                   </tr>
