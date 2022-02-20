@@ -70,6 +70,7 @@
                 <th>No</th>
                   <th>Email </th>
                   <th>Fullname</th>
+				  <th>Is Active</th>
                   <!-- <th>Password</th> -->
                   <th>Tanggal</th>
                 </tr>
@@ -85,6 +86,7 @@
                     <td><?php echo $no;?></td>
                     <td><?php echo $data['email']?></td>
                     <td><?php echo $data['fullname']?></td>
+					<td><?php echo $data['is_active']?></td>
                     <td><?php echo $data['tanggal']?></td>
                     < <td align="center">
 					<a href="hapus_profile.php?id=<?php echo $data['id_user']?>"class="btn btn-danger">Hapus</a></td>

@@ -81,27 +81,35 @@
     		<div class="col-sm-8">
       			<input type="text" class="form-control" name="Fullname" value="<?= $data['fullname']?>" required="">
     		</div>		
-					
+		</div>	
+		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Is Active</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="IsActive" value="<?= $data['is_active']?>" required="">
+    		</div>		
+		</div>
+
 			<div class="form-group row">
     		<label class="col-sm-2 col-form-label"></label>
     		<div class="col-sm-8">
       			<input type="submit" name="update" value="update" class="btn btn-primary">
     		</div>
-			</div>
+		</div>
 	</form>
 
 	<?php
 	if(isset($_POST['update']))
 	{
-		// $ambil=mysqli_query($koneksi,"UPDATE tbl_mahasiswa SET
-		// id_level		='$_POST[IdLevel]',
-		// no_hp 			='$_POST[NoHp]',
-		// nik  			='$_POST[Nik]',
-		// is_active		='$_POST[IsActive]' WHERE id_user='$_GET[id]'");
-		// if($q)
-		// {
-		// 	header('location:/datauser.php');//redirect
-		// }
+		$ambil=mysqli_query($koneksi,"UPDATE tb_user SET
+		email		='$_POST[Email]',
+		fullname 	='$_POST[Fullname]',
+		tanggal  	='$_POST[tanggal]',
+		is_active	='$_POST[IsActive]' WHERE id_user='$_GET[id]'"
+		);
+		if($q)
+		{
+			header('location:/profile.php');//redirect
+		}
 	}
 	?>
 	        </div>
