@@ -41,7 +41,7 @@
 		</div>
 		<div class="divider"></div>
 		<ul class="nav menu">
-        <li><a href="data_ternak.php"><em class="fa fa-calendar">&nbsp;</em> Data Peternakan</a></li>
+        <li><a href="index.php"><em class="fa fa-calendar">&nbsp;</em> Data Peternakan</a></li>
 			<li><a href="data_toko.php"><em class="fa fa-calendar">&nbsp;</em> Data Toko</a></li>
 			<li><a href="info.php"><em class="fa fa-calendar">&nbsp;</em> Info</a></li>
 			<li><a href="profile.php"><em class="fa fa-calendar">&nbsp;</em> Profile</a></li>
@@ -66,8 +66,8 @@
 
 	<?php
 	include 'koneksi.php';
-	$q=mysqli_query($koneksi,"SELECT * FROM tb_user WHERE id_user='$_GET[id]'");
-	$data=mysqli_fetch_array($q);
+	$ambil=mysqli_query($koneksi,"SELECT * FROM tb_user WHERE id_user='$_GET[id]'");
+	$data=mysqli_fetch_array($ambil);
 	?>
 	<form action="" method="post" >
 		<div class="form-group row">
@@ -92,18 +92,17 @@
 
 	<?php
 	if(isset($_POST['update']))
-	// {
-		
-	// 	$q=mysqli_query($koneksi,"UPDATE tbl_mahasiswa SET
-	// 	id_level		='$_POST[IdLevel]',
-	// 	no_hp 			='$_POST[NoHp]',
-	// 	nik  			='$_POST[Nik]',
-	// 	is_active		='$_POST[IsActive]' WHERE id_user='$_GET[id]'");
-	// 	if($q)
-	// 	{
-	// 		header('location:/datauser.php');//redirect
-	// 	}
-	// }
+	{
+		// $ambil=mysqli_query($koneksi,"UPDATE tbl_mahasiswa SET
+		// id_level		='$_POST[IdLevel]',
+		// no_hp 			='$_POST[NoHp]',
+		// nik  			='$_POST[Nik]',
+		// is_active		='$_POST[IsActive]' WHERE id_user='$_GET[id]'");
+		// if($q)
+		// {
+		// 	header('location:/datauser.php');//redirect
+		// }
+	}
 	?>
 	        </div>
 	      </div>
