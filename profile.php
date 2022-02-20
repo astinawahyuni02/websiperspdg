@@ -78,7 +78,7 @@
               <tbody>
                 <?php
                   include 'koneksi.php';
-                  $ambil=mysqli_query($koneksi,"SELECT * FROM `database-siperspdg`.tb_user");
+                  $ambil=mysqli_query($koneksi,"SELECT * FROM tb_user");
                   $no=1;
                   while ($data=mysqli_fetch_array($ambil)) {
                   ?>

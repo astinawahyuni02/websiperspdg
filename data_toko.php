@@ -79,7 +79,7 @@
               <tbody>
                 <?php
                   include 'koneksi.php';
-                  $ambil=mysqli_query($koneksi,"SELECT * FROM `database-siperspdg`.tb_toko");
+                  $ambil=mysqli_query($koneksi,"SELECT * FROM tb_toko");
                   $no=1;
                   while ($data=mysqli_fetch_array($ambil)) {
                   ?>
@@ -90,7 +90,7 @@
                     <td><?php echo $data['keterangan']?></td>
                     <td><?php echo $data['longitude']?></td>
                     <td><?php echo $data['latitude']?></td>
-                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='50' height='50';"?> </td>
+                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='100' height='100';"?> </td>
                     <td align="center">
 					<a href="hapus_toko.php?id=<?php echo $data['id_toko']?>"class="btn btn-danger">Hapus</a></td>
                   </tr>
