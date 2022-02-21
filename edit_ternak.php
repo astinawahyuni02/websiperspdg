@@ -160,12 +160,12 @@
       			<input type="text" class="form-control" name="Permasalahan" value="<?= $data['permasalahan']?>" required="">
     		</div>		
 		</div>
-        <div class="form-group row">
+        <!-- <div class="form-group row">
     		<label for="inputEmail3" class="col-sm-2 col-form-label">Gambar</label>
     		<div class="col-sm-8">
       			<input type="text" class="form-control" name="Gambar" value="<?= $data['gambar']?>" required="">
     		</div>		
-		</div>
+		</div> -->
         <div class="form-group row">
     		<label for="inputEmail3" class="col-sm-2 col-form-label">Longitude</label>
     		<div class="col-sm-8">
@@ -212,7 +212,7 @@
         penghasilan         ='$_POST[Penghasilan]',
         mutasi_ternak       ='$_POST[MutasiTernak]',
         permasalahan        ='$_POST[permasalahan]',
-        gambar              ='$_POST[Gambar]',
+        -- gambar              ='$_POST[Gambar]',
         longitude           ='$_POST[Longitude]',
         latitude            ='$_POST[Latitude]',
         tanggal             ='$_POST[Tanggal]' WHERE id_peternakan='$_GET[id]'"

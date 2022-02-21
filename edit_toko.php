@@ -88,12 +88,12 @@
       			<input type="text" class="form-control" name="Keterangan" value="<?= $data['keterangan']?>" required="">
     		</div>		
 		</div>
-		<div class="form-group row">
+		<!-- <div class="form-group row">
     		<label for="inputEmail3" class="col-sm-2 col-form-label">Gambar</label>
     		<div class="col-sm-8">
       			<input type="text" class="form-control" name="Gambar" value="<?= $data['gambar']?>" required="">
     		</div>		
-		</div>
+		</div> -->
         <div class="form-group row">
     		<label for="inputEmail3" class="col-sm-2 col-form-label">Longitude</label>
     		<div class="col-sm-8">
@@ -122,7 +122,7 @@
 		nama_toko		='$_POST[NamaToko]',
 		alamat 	        ='$_POST[Alamat]',
 		keterangan  	='$_POST[Keterangan]',
-		gambar	        ='$_POST[Gambar]',
+		-- gambar	        ='$_POST[Gambar]',
         longitude       ='$_POST[Longitude]',
         latitude        ='$_POST[Latitude]' WHERE id_toko='$_GET[id]'"
 		);
