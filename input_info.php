@@ -101,8 +101,7 @@
         VALUES(
             '$_POST[judul_info]',
             '$_POST[deskripsi]',
-            '$_POST[tanggal]'
-            )"
+            '$_POST[tanggal]')"
 		);
 		if($ambil)
 		{
