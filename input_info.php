@@ -83,6 +83,7 @@
       			<input type="text" class="form-control" name="Tanggal" value="<?= $data['tanggal']?>" required="">
     		</div>		
 		</div>
+		
 
 			<div class="form-group row">
     		<label class="col-sm-2 col-form-label"></label>
