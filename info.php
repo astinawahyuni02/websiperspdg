@@ -71,6 +71,7 @@
                   <th>Judul Info</th>
                   <th>Deskripsi</th>
                   <th>Tanggal</th>
+				  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>

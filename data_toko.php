@@ -74,6 +74,7 @@
                   <th>Longitude</th>
                   <th>Latitude</th>
 				  <th>Gambar</th>
+				  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>

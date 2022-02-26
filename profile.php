@@ -73,6 +73,7 @@
 				  <th>Is Active</th>
                   <!-- <th>Password</th> -->
                   <th>Tanggal</th>
+				  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
