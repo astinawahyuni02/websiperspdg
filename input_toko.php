@@ -41,7 +41,7 @@
 		</div>
 		<div class="divider"></div>
 		<ul class="nav menu">
-		<li><a href="index.php"><em class="fa fa-calendar">&nbsp;</em> Data Peternakan</a></li>
+        <li><a href="index.php"><em class="fa fa-calendar">&nbsp;</em> Data Peternakan</a></li>
 			<li><a href="data_toko.php"><em class="fa fa-calendar">&nbsp;</em> Data Toko</a></li>
 			<li><a href="info.php"><em class="fa fa-calendar">&nbsp;</em> Info</a></li>
 			<li><a href="profile.php"><em class="fa fa-calendar">&nbsp;</em> Profile</a></li>
@@ -61,43 +61,75 @@
 	<div class="container-fluid" style="margin-top: 10px">
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Tabel Data Info</div> 
-		  <a href="info.php" class="btn btn-success">Tambah Data</a><br>
+          <i class="fa fa-table"></i> Input Tabel Data Toko</div> 
         <div class="card-body">
-          <div class="table-responsive" style="margin-top: 10px">
-            <table class="table table-striped table-bordered" align="center">
-              <thead>
-                <tr>
-                <th>No</th>
-                  <th>Judul Info</th>
-                  <th>Deskripsi</th>
-                  <th>Tanggal</th>
-				  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                  include 'koneksi.php';
-                  $ambil=mysqli_query($koneksi,"SELECT * FROM tb_info");
-                  $no=1;
-                  while ($data=mysqli_fetch_array($ambil)) {
-                  ?>
-                  <tr>
-                    <td><?php echo $no;?></td>
-                    <td><?php echo $data['judul_info']?></td>
-                    <td><?php echo $data['deskripsi']?></td>
-                    <td><?php echo $data['tanggal']?></td>
-                    <td align="center">
-					<a href="edit_info.php?id=<?php echo $data['id_info']?>"class="btn btn-danger">Edit</a>
-					<a href="hapus_info.php?id=<?php echo $data['id_info']?>"class="btn btn-danger">Hapus</a></td>
-                  </tr>
-                  <?php
-                  $no++;
-                  }
-                  ?>
-	              </tbody>
-	            </table>
-	          </div>
+
+        <form action="" method="post" >
+		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Nama Toko</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="NamaToko" value="<?= $data['nama_toko']?>" required="">
+    		</div>
+  		</div>
+		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Alamat</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Alamat" value="<?= $data['alamat']?>" required="">
+    		</div>		
+		</div>	
+        <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Keterangan</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Keterangan" value="<?= $data['keterangan']?>" required="">
+    		</div>		
+		</div>
+		<!-- <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Gambar</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Gambar" value="<?= $data['gambar']?>" required="">
+    		</div>		
+		</div> -->
+        <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Longitude</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Longitude" value="<?= $data['longitude']?>" required="">
+    		</div>		
+		</div>
+        <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Latitude</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Latitude" value="<?= $data['latitude']?>" required="">
+    		</div>		
+		</div>
+
+			<div class="form-group row">
+    		<label class="col-sm-2 col-form-label"></label>
+    		<div class="col-sm-8">
+      			<input type="submit" name="submit" value="submit" class="btn btn-primary">
+    		</div>
+		</div>
+	</form>
+
+	<?php
+	if(isset($_POST['submit']))
+	{
+		$ambil=mysqli_query($koneksi,"INSERT INTO tb_toko 
+        (nama_toko, alamat, keterangan, longitude, latitude) 
+        VALUES(
+            '$_POST[nama_toko]',
+            '$_POST[alamat]',
+            '$_POST[keterangan]',
+            '$_POST[longitude]',
+            '$_POST[latitude]'
+            )"
+		);
+		if($ambil)
+		{
+			header('location:/data_toko.php');//redirect
+            echo "<script>alert('Data berhasil disimpan')</script>";
+		}
+	}
+	?>
 	        </div>
 	      </div>
 	    </div>

@@ -64,11 +64,6 @@
           <i class="fa fa-table"></i> Input Tabel Data Ternak</div> 
         <div class="card-body">
 
-	<?php
-	include 'koneksi.php';
-	$ambil=mysqli_query($koneksi,"SELECT * FROM tb_peternakan WHERE id_peternakan='$_GET[id]'");
-	$data=mysqli_fetch_array($ambil);
-	?>
 	<form action="" method="post" >
 		<div class="form-group row">
     		<label for="inputEmail3" class="col-sm-2 col-form-label">Nama Peternakan</label>
