@@ -191,6 +191,7 @@
 	<?php
 	if(isset($_POST['submit']))
 	{
+		include 'koneksi.php';
 		$ambil=mysqli_query($koneksi,"INSERT INTO tb_peternakan 
         (nama_peternakan,jekel,umur,pendidikan,tanggungan_keluarga,status_ternak,pengalaman_beternak,status_lahan,
         alamat,modal_tetap,tenaga_kerja, bibit_sapi,penghasilan,mutasi_ternak,permasalahan,longitude,latitude,tanggal) 
