@@ -88,6 +88,7 @@
                     <td><?php echo $data['tanggal']?></td>
                     <td align="center">
 					<a href="edit_info.php?id=<?php echo $data['id_info']?>"class="btn btn-danger">Edit</a>
+					|
 					<a href="hapus_info.php?id=<?php echo $data['id_info']?>"class="btn btn-danger">Hapus</a></td>
                   </tr>
                   <?php

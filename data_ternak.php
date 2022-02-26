@@ -121,6 +121,7 @@
                     <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='200' height='100';"?> </td>
                     <td align="center">
 					<a href="edit_ternak.php?id=<?php echo $data['id_peternakan']?>"class="btn btn-danger">Edit</a>
+					|
 					<a href="hapus_ternak.php?id=<?php echo $data['id_peternakan']?>"class="btn btn-danger">Hapus</a></td>
                   </tr>
                   <?php
