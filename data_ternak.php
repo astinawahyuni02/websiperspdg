@@ -87,6 +87,7 @@
                   <th>Latitude</th>
 				  <th>Tanggal Data di Input</th>
 				  <th>Gambar</th>
+				  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
