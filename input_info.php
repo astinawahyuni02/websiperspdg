@@ -96,8 +96,7 @@
 	if(isset($_POST['submit']))
 	{
 		include 'koneksi.php';
-		$ambil=mysqli_query($koneksi,"INSERT INTO tb_info 
-        (judul_info, deskripsi, tanggal) 
+		$ambil=mysqli_query($koneksi,"INSERT INTO tb_info (judul_info,deskripsi,tanggal) 
         VALUES(
             '$_POST[judul_info]',
             '$_POST[deskripsi]',

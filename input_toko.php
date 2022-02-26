@@ -115,7 +115,7 @@
 	{
 		include 'koneksi.php';
 		$ambil=mysqli_query($koneksi,"INSERT INTO tb_toko 
-        (nama_toko, alamat, keterangan, longitude, latitude) 
+        (nama_toko,alamat,keterangan,longitude,latitude) 
         VALUES(
             '$_POST[nama_toko]',
             '$_POST[alamat]',
