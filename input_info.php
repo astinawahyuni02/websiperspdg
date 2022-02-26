@@ -87,7 +87,7 @@
 			<div class="form-group row">
     		<label class="col-sm-2 col-form-label"></label>
     		<div class="col-sm-8">
-      			<input type="submit" name="update" value="update" class="btn btn-primary">
+      			<input type="submit" name="submit" value="submit" class="btn btn-primary">
     		</div>
 		</div>
 	</form>
