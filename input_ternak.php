@@ -209,7 +209,7 @@
         $longitude  			= $_POST['longitude'];
         $latitude  				= $_POST['latitude'];
         $tanggal  				= $_POST['tanggal'];
-		
+
 		$ambil="INSERT INTO tb_peternakan SET 
 		nama_peternakan		='$nama_peternakan',
 		jekel				='$jekel',
@@ -231,9 +231,12 @@
 		latitude			='$latitude',
 		tanggal				='$tanggal'";
 		mysqli_query($koneksi, $ambil);
-		
-		header('location:/data_ternak.php');//redirect
-        echo "<script>alert('Data berhasil disimpan')</script>";
+		if($ambil)
+		{
+			header('location:/data_ternak.php');//redirect
+			echo "<script>alert('Data berhasil disimpan')</script>";
+		}
+        
 	
 	?>
 	        </div>
