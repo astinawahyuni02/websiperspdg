@@ -210,7 +210,7 @@
         $latitude  				= $_POST['latitude'];
         $tanggal  				= $_POST['tanggal'];
 
-		$ambil="INSERT INTO tb_peternakan SET 
+		$ambil=mysqli_query($koneksi,"INSERT INTO tb_peternakan SET 
 		nama_peternakan		='$nama_peternakan',
 		jekel				='$jekel',
 		umur  		 		='$umur',
@@ -229,7 +229,7 @@
 		gambar				='$gambar',
 		longitude			='$longitude',
 		latitude			='$latitude',
-		tanggal				='$tanggal'";
+		tanggal				='$tanggal'");
 		mysqli_query($koneksi, $ambil);
 		if($ambil)
 		{
