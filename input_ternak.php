@@ -189,36 +189,48 @@
 	</form>
 
 	<?php
-	if(isset($_POST['submit']))
-	{
 		include 'koneksi.php';
-		$ambil=mysqli_query($koneksi,"INSERT INTO tb_peternakan 
-        (nama_peternakan,jekel,umur,pendidikan,tanggungan_keluarga,status_ternak,pengalaman_beternak,status_lahan,alamat,modal_tetap,tenaga_kerja,bibit_sapi,penghasilan,mutasi_ternak,permasalahan,longitude,latitude,tanggal) 
-        VALUES(
-            '$_POST[nama_peternakan]',
-            '$_POST[jekel]',
-            '$_POST[pendidikan]',
-            '$_POST[tanggungan_keluarga]',
-            '$_POST[status_ternak]',
-            '$_POST[pengalaman_beternak]',
-            '$_POST[status_lahan]',
-            '$_POST[alamat]',
-            '$_POST[modal_tetap]',
-            '$_POST[tenaga_kerja]',
-            '$_POST[bibit_sapi]',
-            '$_POST[penghasilan]',
-            '$_POST[mutasi_ternak]',
-            '$_POST[permasalahan]',
-            '$_POST[Longitude]',
-            '$_POST[latitude]',
-            '$_POST[tanggal]')"
-		);
-		if($ambil)
-		{
-			header('location:/data_ternak.php');//redirect
-            echo "<script>alert('Data berhasil disimpan')</script>";
-		}
-	}
+        $nama_peternakan 		= $_POST['nama_peternakan'];
+        $jekel  		 		= $_POST['jekel'];
+        $pendidikan  	 		= $_POST['pendidikan'];
+        $tanggungan_keluarga  	= $_POST['tanggungan_keluarga'];
+        $status_ternak  		= $_POST['status_ternak'];
+        $pengalaman_beternak  	= $_POST['pengalaman_beternak'];
+        $status_lahan  			= $_POST['status_lahan'];
+        $alamat  				= $_POST['alamat'];
+        $modal_tetap  			= $_POST['modal_tetap'];
+        $tenaga_kerja  			= $_POST['tenaga_kerja'];
+        $bibit_sapi  			= $_POST['bibit_sapi'];
+        $penghasilan  			= $_POST['penghasilan'];
+        $mutasi_ternak  		= $_POST['mutasi_ternak'];
+        $permasalahan  			= $_POST['permasalahan'];
+        $longitude  			= $_POST['longitude'];
+        $latitude  				= $_POST['latitude'];
+        $tanggal  				= $_POST['tanggal'];
+		$ambil="INSERT INTO tb_peternakan SET 
+		nama_peternakan		='$nama_peternakan',
+		jekel				='$jekel',
+		pendidikan			='$pendidikan',
+		tanggungan_keluarga	='$tanggungan_keluarga',
+		status_ternak		='$status_ternak',
+		pengalaman_beternak	='$pengalaman_beternak',
+		status_lahan		='$status_lahan',
+		alamat				='$alamat',
+		modal_tetap			='$modal_tetap',
+		tenaga_kerja		='$tenaga_kerja',
+		bibit_sapi			='$bibit_sapi',
+		penghasilan			='$penghasilan',
+		mutasi_ternak		='$mutasi_ternak',
+		permasalahan		='$permasalahan',
+		longitude			='$longitude',
+		latitude			='$latitude',
+		tanggal				='$tanggal'";
+		mysqli_query($koneksi, $ambil);
+		
+		header('location:/data_ternak.php');//redirect
+        // echo "<script>alert('Data berhasil disimpan')</script>";
+	
+
 	?>
 	        </div>
 	      </div>
