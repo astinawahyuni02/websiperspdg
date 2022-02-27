@@ -234,7 +234,7 @@
 		if($ambil)
 		{
 			header('location:/data_ternak.php');//redirect
-			echo "<script>alert('Data berhasil disimpan')</script>";
+			// echo "<script>alert('Data berhasil disimpan')</script>";
 		}
         
 	
