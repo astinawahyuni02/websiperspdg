@@ -155,12 +155,12 @@
       			<input type="text" class="form-control" name="Permasalahan" value="<?= $data['permasalahan']?>" required="">
     		</div>		
 		</div>
-        <!-- <div class="form-group row">
+        <div class="form-group row">
     		<label for="inputEmail3" class="col-sm-2 col-form-label">Gambar</label>
     		<div class="col-sm-8">
       			<input type="text" class="form-control" name="Gambar" value="<?= $data['gambar']?>" required="">
     		</div>		
-		</div> -->
+		</div>
         <div class="form-group row">
     		<label for="inputEmail3" class="col-sm-2 col-form-label">Longitude</label>
     		<div class="col-sm-8">
@@ -192,6 +192,7 @@
 		include 'koneksi.php';
         $nama_peternakan 		= $_POST['nama_peternakan'];
         $jekel  		 		= $_POST['jekel'];
+		$umur  		 			= $_POST['umur'];
         $pendidikan  	 		= $_POST['pendidikan'];
         $tanggungan_keluarga  	= $_POST['tanggungan_keluarga'];
         $status_ternak  		= $_POST['status_ternak'];
@@ -204,12 +205,15 @@
         $penghasilan  			= $_POST['penghasilan'];
         $mutasi_ternak  		= $_POST['mutasi_ternak'];
         $permasalahan  			= $_POST['permasalahan'];
+		$gambar  				= $_POST['gambar'];
         $longitude  			= $_POST['longitude'];
         $latitude  				= $_POST['latitude'];
         $tanggal  				= $_POST['tanggal'];
+		
 		$ambil="INSERT INTO tb_peternakan SET 
 		nama_peternakan		='$nama_peternakan',
 		jekel				='$jekel',
+		umur  		 		='$umur',
 		pendidikan			='$pendidikan',
 		tanggungan_keluarga	='$tanggungan_keluarga',
 		status_ternak		='$status_ternak',
@@ -222,15 +226,15 @@
 		penghasilan			='$penghasilan',
 		mutasi_ternak		='$mutasi_ternak',
 		permasalahan		='$permasalahan',
+		gambar				='$gambar',
 		longitude			='$longitude',
 		latitude			='$latitude',
 		tanggal				='$tanggal'";
 		mysqli_query($koneksi, $ambil);
 		
 		header('location:/data_ternak.php');//redirect
-        // echo "<script>alert('Data berhasil disimpan')</script>";
+        echo "<script>alert('Data berhasil disimpan')</script>";
 	
-
 	?>
 	        </div>
 	      </div>
