@@ -192,6 +192,7 @@
 	if(isset($_POST['submit']))
 	{
 		include 'koneksi.php';
+		$id_peternakan 			= $_POST['id_peternakan'];
         $nama_peternakan 		= $_POST['nama_peternakan'];
         $jekel  		 		= $_POST['jekel'];
 		$umur  		 			= $_POST['umur'];
@@ -212,8 +213,9 @@
         $latitude  				= $_POST['latitude'];
         $tanggal  				= $_POST['tanggal'];
 
-		$ambil=mysqli_query($koneksi,"INSERT INTO tb_peternakan (nama_peternakan,jekel,umur,pendidikan,tanggungan_keluarga,status_ternak,pengalaman_beternak,status_lahan,alamat,modal_tetap,tenaga_kerja,bibit_sapi,penghasilan,mutasi_ternak,permasalahan,gambar,longitude,latitude,tanggal)
+		$ambil=mysqli_query($koneksi,"INSERT INTO tb_peternakan (id_peternakan,nama_peternakan,jekel,umur,pendidikan,tanggungan_keluarga,status_ternak,pengalaman_beternak,status_lahan,alamat,modal_tetap,tenaga_kerja,bibit_sapi,penghasilan,mutasi_ternak,permasalahan,gambar,longitude,latitude,tanggal)
 		 VALUES(
+		'$id_peternakan',
 		'$nama_peternakan',
 		'$jekel',
 		'$umur',
