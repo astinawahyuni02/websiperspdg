@@ -231,7 +231,7 @@
 		'$longitude',
 		'$latitude',
 		'$tanggal')");
-		mysqli_query($koneksi, $ambil);
+		// mysqli_query($koneksi, $ambil);
 		if($ambil)
 		{
 			// header('location:/index.php');//redirect
