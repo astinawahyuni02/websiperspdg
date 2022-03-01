@@ -189,35 +189,40 @@
 	</form>
 
 	 <?php
+	 if(isset($_POST['submit']))
+	 {
 		include 'koneksi.php';
 		// $id_peternakan 			= $_POST['id_peternakan'];
-        $nama_peternakan 		= $_POST['nama_peternakan'];
-        $jekel  		 		= $_POST['jekel'];
-		$umur  		 			= $_POST['umur'];
-        $pendidikan  	 		= $_POST['pendidikan'];
-        $tanggungan_keluarga  	= $_POST['tanggungan_keluarga'];
-        $status_ternak  		= $_POST['status_ternak'];
-        $pengalaman_beternak  	= $_POST['pengalaman_beternak'];
-        $status_lahan  			= $_POST['status_lahan'];
-        $alamat  				= $_POST['alamat'];
-        $modal_tetap  			= $_POST['modal_tetap'];
-        $tenaga_kerja  			= $_POST['tenaga_kerja'];
-        $bibit_sapi  			= $_POST['bibit_sapi'];
-        $penghasilan  			= $_POST['penghasilan'];
-        $mutasi_ternak  		= $_POST['mutasi_ternak'];
-        $permasalahan  			= $_POST['permasalahan'];
-		$gambar  				= $_POST['gambar'];
-        $longitude  			= $_POST['longitude'];
-        $latitude  				= $_POST['latitude'];
-        $tanggal  				= $_POST['tanggal'];
+        $nama_peternakan 		= $_POST['NamaPeternakan'];
+        $jekel  		 		= $_POST['Jekel'];
+		$umur  		 			= $_POST['Umur'];
+        $pendidikan  	 		= $_POST['Pendidikan'];
+        $tanggungan_keluarga  	= $_POST['TanggunganKeluarga'];
+        $status_ternak  		= $_POST['StatusTernak'];
+        $pengalaman_beternak  	= $_POST['PengalamanBeternak'];
+        $status_lahan  			= $_POST['StatusLahan'];
+        $alamat  				= $_POST['Alamat'];
+        $modal_tetap  			= $_POST['ModalTetap'];
+        $tenaga_kerja  			= $_POST['TenagaKerja'];
+        $bibit_sapi  			= $_POST['BibitSapi'];
+        $penghasilan  			= $_POST['Penghasilan'];
+        $mutasi_ternak  		= $_POST['MutasiTernak'];
+        $permasalahan  			= $_POST['Permasalahan'];
+		$gambar  				= $_POST['Gambar'];
+        $longitude  			= $_POST['Longitude'];
+        $latitude  				= $_POST['Latitude'];
+        $tanggal  				= $_POST['Tanggal'];
 
-		mysqli_query($koneksi,"INSERT INTO tb_peternakan VALUES ('','$nama_peternakan','$jekel','$umur','$pendidikan',
+		mysqli_query($koneksi,"INSERT INTO tb_peternakan (nama_peternakan,jekel,umur,pendidikan,tanggungan_keluarga,
+		status_ternak,pengalaman_beternak,status_lahan,alamat,modal_tetap,tenaga_kerja,bibit_sapi,penghasilan,mutasi_ternak,
+		permasalahan,gambar,longitude,latitude,tanggal)
+		VALUES ('$nama_peternakan','$jekel','$umur','$pendidikan',
 		'$tanggungan_keluarga','$status_ternak','$pengalaman_beternak','$status_lahan','$alamat','$modal_tetap','$tenaga_kerja',
 		'$bibit_sapi','$penghasilan','$mutasi_ternak','$permasalahan','$gambar','$longitude','$latitude','$tanggal')
 		");
 		header("location:index.php?pesan=input");
 		
-        
+	} 
 	?> 
 	        </div>
 	      </div>
