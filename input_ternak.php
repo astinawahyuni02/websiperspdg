@@ -211,9 +211,9 @@
         $latitude  				= $_POST['latitude'];
         $tanggal  				= $_POST['tanggal'];
 
-		mysqli_query($koneksi,"INSERT INTO tb_peternakan VALUES ('','nama_peternakan','jekel','umur','pendidikan',
-		'tanggungan_keluarga','status_ternak','pengalaman_beternak','status_lahan','alamat','modal_tetap','tenaga_kerja',
-		'bibit_sapi','penghasilan','mutasi_ternak','permasalahan','gambar','longitude','latitude','tanggal')
+		mysqli_query($koneksi,"INSERT INTO tb_peternakan VALUES ('','$nama_peternakan','$jekel','$umur','$pendidikan',
+		'$tanggungan_keluarga','$status_ternak','$pengalaman_beternak','$status_lahan','$alamat','$modal_tetap','$tenaga_kerja',
+		'$bibit_sapi','$penghasilan','$mutasi_ternak','$permasalahan','$gambar','$longitude','$latitude','$tanggal')
 		--  VALUES(
 		-- '$id_peternakan',
 		-- '$nama_peternakan',
