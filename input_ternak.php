@@ -215,7 +215,7 @@
 		'$tanggungan_keluarga','$status_ternak','$pengalaman_beternak','$status_lahan','$alamat','$modal_tetap','$tenaga_kerja',
 		'$bibit_sapi','$penghasilan','$mutasi_ternak','$permasalahan','$gambar','$longitude','$latitude','$tanggal')
 		");
-		header("location:data_ternak.php?pesan=input");
+		header("location:index.php?pesan=input");
 		
         
 	?> 
