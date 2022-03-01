@@ -190,7 +190,7 @@
 
 	 <?php
 		include 'koneksi.php';
-		$id_peternakan 			= $_POST['id_peternakan'];
+		// $id_peternakan 			= $_POST['id_peternakan'];
         $nama_peternakan 		= $_POST['nama_peternakan'];
         $jekel  		 		= $_POST['jekel'];
 		$umur  		 			= $_POST['umur'];
@@ -214,34 +214,9 @@
 		mysqli_query($koneksi,"INSERT INTO tb_peternakan VALUES ('','$nama_peternakan','$jekel','$umur','$pendidikan',
 		'$tanggungan_keluarga','$status_ternak','$pengalaman_beternak','$status_lahan','$alamat','$modal_tetap','$tenaga_kerja',
 		'$bibit_sapi','$penghasilan','$mutasi_ternak','$permasalahan','$gambar','$longitude','$latitude','$tanggal')
-		--  VALUES(
-		-- '$id_peternakan',
-		-- '$nama_peternakan',
-		-- '$jekel',
-		-- '$umur',
-		-- '$pendidikan',
-	    -- '$tanggungan_keluarga',
-		-- '$status_ternak',
-		-- '$pengalaman_beternak',
-		-- '$status_lahan',
-		-- '$alamat',
-		-- '$bibit_sapi',
-		-- '$penghasilan',
-		-- '$mutasi_ternak',
-		-- '$permasalahan',
-		-- '$gambar',
-		-- '$longitude',
-		-- '$latitude',
-		-- '$tanggal')
 		");
-		// mysqli_query($koneksi, $ambil);
 		header("location:data_ternak.php?pesan=input");
-		// if($ambil)
-		// {
-		// 	// header('location:/index.php');//redirect
-		// 	header('location:/data_ternak.php');
-		// 	// echo "<script>alert('Data berhasil disimpan')</script>";
-		// }
+		
         
 	?> 
 	        </div>
