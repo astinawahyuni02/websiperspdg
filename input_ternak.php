@@ -233,7 +233,7 @@
 		mysqli_query($koneksi, $ambil);
 		if($ambil)
 		{
-			header('location:/index.php');//redirect
+			// header('location:/index.php');//redirect
 			header('location:/data_ternak.php');
 			// echo "<script>alert('Data berhasil disimpan')</script>";
 		}

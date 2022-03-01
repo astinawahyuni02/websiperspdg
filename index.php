@@ -41,9 +41,9 @@
 		</div>
 		<div class="divider"></div>
 		<ul class="nav menu">
-		<li><a href="index.php"><em class="fa fa-calendar">&nbsp;</em> Data Peternakan</a></li>
+		<li><a href="index.php"><em class="fa fa-calendar">&nbsp;</em> Info</a></li>
+		<li><a href="data_ternak.php"><em class="fa fa-calendar">&nbsp;</em> Data Peternakan</a></li>
 			<li><a href="data_toko.php"><em class="fa fa-calendar">&nbsp;</em> Data Toko</a></li>
-			<li><a href="info.php"><em class="fa fa-calendar">&nbsp;</em> Info</a></li>
 			<li><a href="profile.php"><em class="fa fa-calendar">&nbsp;</em> Profile</a></li>
 		</ul>
 	</div><!--/.sidebar-->
@@ -54,74 +54,42 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Data Ternak</li>
+				<li class="active">Data Toko</li>
 			</ol>
 		</div><!--/.row-->
 
 	<div class="container-fluid" style="margin-top: 10px">
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Tabel Data Peternakan</div> 
-		  <a href="input_ternak.php" class="btn btn-danger">Tambah Data</a><br>
+          <i class="fa fa-table"></i> Tabel Data Info</div> 
         <div class="card-body">
           <div class="table-responsive" style="margin-top: 10px">
             <table class="table table-striped table-bordered" align="center">
               <thead>
                 <tr>
                 <th>No</th>
-                  <th>Nama Peternakan</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Umur</th>
-                  <th>Pendidikan</th>
-                  <th>Tanggungan Keluarga</th>
-                  <th>Status Ternak</th>
-                  <th>Pengalaman Beternak</th>
-                  <th>Status Lahan</th>
-                  <th>Alamat</th>
-                  <th>Modal Tetap</th>
-                  <th>Tenaga Kerja</th>
-                  <th>Bibit Sapi</th>
-                  <th>Penghasilan</th>
-                  <th>Mutasi Ternak</th>
-                  <th>Permasalahan</th>
-                  <th>Longitude</th>
-                  <th>Latitude</th>
-				  <th>Tanggal Data di Input</th>
-				  <th>Gambar</th>
+                  <th>Judul Info</th>
+                  <th>Deskripsi</th>
+                  <th>Tanggal</th>
 				  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
                   include 'koneksi.php';
-                  $ambil=mysqli_query($koneksi,"SELECT * FROM tb_peternakan");
+                  $ambil=mysqli_query($koneksi,"SELECT * FROM tb_info");
                   $no=1;
                   while ($data=mysqli_fetch_array($ambil)) {
                   ?>
                   <tr>
                     <td><?php echo $no;?></td>
-                    <td><?php echo $data['nama_peternakan']?></td>
-                    <td><?php echo $data['jekel']?></td>
-                    <td><?php echo $data['umur']?></td>
-                    <td><?php echo $data['pendidikan']?></td>
-                    <td><?php echo $data['tanggungan_keluarga']?></td>
-                    <td><?php echo $data['status_ternak']?></td>
-                    <td><?php echo $data['pengalaman_beternak']?></td>
-                    <td><?php echo $data['status_lahan']?></td>
-                    <td><?php echo $data['alamat']?></td>
-                    <td><?php echo $data['modal_tetap']?></td>
-                    <td><?php echo $data['tenaga_kerja']?></td>
-                    <td><?php echo $data['bibit_sapi']?></td>
-                    <td><?php echo $data['penghasilan']?></td>
-                    <td><?php echo $data['mutasi_ternak']?></td>
-                    <td><?php echo $data['permasalahan']?></td>
-                    <td><?php echo $data['longitude']?></td>
-                    <td><?php echo $data['latitude']?></td>
-					<td><?php echo $data['tanggal']?></td>
-                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='200' height='100';"?> </td>
+                    <td><?php echo $data['judul_info']?></td>
+                    <td><?php echo $data['deskripsi']?></td>
+                    <td><?php echo $data['tanggal']?></td>
                     <td align="center">
-					<a href="edit_ternak.php?id=<?php echo $data['id_peternakan']?>"class="btn btn-danger">Edit</a>
-					<a href="hapus_ternak.php?id=<?php echo $data['id_peternakan']?>"class="btn btn-danger">Hapus</a></td>
+					<a href="edit_info.php?id=<?php echo $data['id_info']?>"class="btn btn-danger">Edit</a>
+					|
+					<a href="hapus_info.php?id=<?php echo $data['id_info']?>"class="btn btn-danger">Hapus</a></td>
                   </tr>
                   <?php
                   $no++;
