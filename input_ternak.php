@@ -221,7 +221,7 @@
 
 		if($ambil)
 		{
-			header('location:data_ternak.php');
+			header('location:index.php');
 			echo "<script>alert('Data berhasil disimpan')</script>";
 		}
 	}
