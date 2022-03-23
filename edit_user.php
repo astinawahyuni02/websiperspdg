@@ -114,7 +114,7 @@
 		);
 		if($ambil)
 		{
-			header('location:/profile.php');//redirect
+			header('location:/user.php');//redirect
 		}
 	}
 	?>

@@ -90,9 +90,9 @@
 					<td><?php echo $data['is_active']?></td>
                     <td><?php echo $data['tanggal']?></td>
 					<td align="center">
-					<a href="edit_profile.php?id=<?php echo $data['id_user']?>"class="btn btn-danger">Edit</a>
+					<a href="edit_user.php?id=<?php echo $data['id_user']?>"class="btn btn-danger">Edit</a>
 					|
-					<a href="hapus_profile.php?id=<?php echo $data['id_user']?>"class="btn btn-danger">Hapus</a></td>
+					<a href="hapus_user.php?id=<?php echo $data['id_user']?>"class="btn btn-danger">Hapus</a></td>
                   </tr>
                   <?php
                   $no++;
