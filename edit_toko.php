@@ -44,7 +44,7 @@
 		<li><a href="index.php"><em class="fa fa-calendar">&nbsp;</em> Info</a></li>
         <li><a href="data_ternak.php"><em class="fa fa-calendar">&nbsp;</em> Data Peternakan</a></li>
 			<li><a href="data_toko.php"><em class="fa fa-calendar">&nbsp;</em> Data Toko</a></li>
-			<li><a href="profile.php"><em class="fa fa-calendar">&nbsp;</em> User</a></li>
+			<li><a href="user.php"><em class="fa fa-calendar">&nbsp;</em> User</a></li>
 		</ul>
 	</div><!--/.sidebar-->
 		
