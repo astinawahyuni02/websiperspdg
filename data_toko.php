@@ -62,7 +62,7 @@
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-table"></i> Tabel Data Toko</div> 
-		  <a href="input_ternak.php" class="btn btn-danger">Tambah Data</a><br>
+		  <a href="input_toko.php" class="btn btn-danger">Tambah Data</a><br>
         <div class="card-body">
           <div class="table-responsive" style="margin-top: 10px">
             <table class="table table-striped table-bordered" align="center">
