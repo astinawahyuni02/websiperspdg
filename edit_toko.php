@@ -9,6 +9,50 @@
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 	
+
+	 <!-- Bagian js -->
+	 <script src='assets/js/jquery-1.10.1.min.js'></script>       
+    
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- akhir dari Bagian js -->
+    <script 
+        src="http://maps.google.com/maps/api/js?sensor=false">
+    </script>
+    <script>
+        function initialize() {
+        var position = new google.maps.LatLng(5.550176, 95.319263);
+        
+        var myOptions = {
+          zoom: 8,
+          center: position,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
+        var map = new google.maps.Map(
+            document.getElementById("map_canvas"),
+            myOptions);
+
+        var marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title:"This is the place."
+        });  
+
+        var contentString = 'Ibukota<strong> Provinsi Aceh</strong>!';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map,marker);
+          
+        });
+
+      }
+    </script>
+
+	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
