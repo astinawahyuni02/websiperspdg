@@ -61,50 +61,81 @@
 	<div class="container-fluid" style="margin-top: 10px">
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Tabel Data Toko</div> 
-		  <a href="input_ternak.php" class="btn btn-danger">Tambah Data</a><br>
+          <i class="fa fa-table"></i> Input Tabel Data Toko</div> 
         <div class="card-body">
-          <div class="table-responsive" style="margin-top: 10px">
-            <table class="table table-striped table-bordered" align="center">
-              <thead>
-                <tr>
-                <th>No</th>
-                  <th>Nama Toko</th>
-                  <th>Alamat</th>
-                  <th>Keterangan</th>
-                  <th>Longitude</th>
-                  <th>Latitude</th>
-				  <th>Gambar</th>
-				  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                  include 'koneksi.php';
-                  $ambil=mysqli_query($koneksi,"SELECT * FROM tb_toko");
-                  $no=1;
-                  while ($data=mysqli_fetch_array($ambil)) {
-                  ?>
-                  <tr>
-                    <td><?php echo $no;?></td>
-                    <td><?php echo $data['nama_toko']?></td>
-                    <td><?php echo $data['alamat']?></td>
-                    <td><?php echo $data['keterangan']?></td>
-                    <td><?php echo $data['longitude']?></td>
-                    <td><?php echo $data['latitude']?></td>
-                    <td><?php echo "<img src='/../websiperspdg/gambar/".$data['gambar']."' width='200' height='100';"?> </td>
-					<td align="center">
-					<a href="edit_toko.php?id=<?php echo $data['id_toko']?>"class="btn btn-danger">Edit</a>
-					|
-					<a href="hapus_toko.php?id=<?php echo $data['id_toko']?>"class="btn btn-danger">Hapus</a></td>
-                  </tr>
-                  <?php
-                  $no++;
-                  }
-                  ?>
-	              </tbody>
-	            </table>
-	          </div>
+
+	<form action="" method="post" >
+		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Nama Toko</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="NamaToko" value="<?= $data['nama_toko']?>" required="">
+    		</div>
+  		</div>
+		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Alamat</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Alamat" value="<?= $data['alamat']?>" required="">
+    		</div>		
+		</div>	
+        <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Keterangan</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Keterangan" value="<?= $data['keterangan']?>" required="">
+    		</div>		
+		</div>
+		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Longitude</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Longitude" value="<?= $data['longitude']?>" required="">
+    		</div>		
+		</div>
+        <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Latitude</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Latitude" value="<?= $data['latitude']?>" required="">
+    		</div>		
+		</div>
+        <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Gambar</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Gambar" value="<?= $data['gambar']?>" required="">
+    		</div>		
+		</div>
+        
+        <!-- <div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Tanggal Data di Input</label>
+    		<div class="col-sm-8">
+      			<input type="text" class="form-control" name="Tanggal" value="<?= $data['tanggal']?>" required="">
+    		</div>		
+		</div> -->
+       
+			<div class="form-group row">
+    		<label class="col-sm-2 col-form-label"></label>
+    		<div class="col-sm-8">
+      			<input type="submit" name="submit" value="submit" class="btn btn-primary">
+    		</div>
+		</div>
+	</form>
+
+	 <?php
+	 if(isset($_POST['submit']))
+	 {
+		include 'koneksi.php';
+        $nama_toko 		= $_POST['NamaToko'];
+        $jekel  		= $_POST['Alamat'];
+		$keterangan  	= $_POST['Keterangan'];
+        $longitude  	= $_POST['Longitude'];
+        $latitude   	= $_POST['Latitude'];
+		$gambar  		= $_POST['Gambar'];
+        // $tanggal  				= $_POST['Tanggal'];
+
+		mysqli_query($koneksi,"INSERT INTO tb_toko (nama_toko,alamat,keterangan,longitude,latitude,gambar)
+		VALUES ('$nama_toko','$alamat','$keterangan','$longitude','$latitude','$gambar')
+		");
+		header("location:index.php?pesan=input");
+		
+	} 
+	?> 
 	        </div>
 	      </div>
 	    </div>
@@ -115,7 +146,7 @@
 		</div>
 		</div><!--/.row-->
 	</div>	<!--/.main-->
-	  
+	
 
 <script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
