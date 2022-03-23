@@ -54,7 +54,7 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Data Toko</li>
+				<li class="active">Data Info</li>
 			</ol>
 		</div><!--/.row-->
 
